@@ -156,8 +156,98 @@ IDEA跑项目我的步骤：
     ````
     注：properties配置文件在IDEA中默认utf-8可能会乱码
     ````
+---
+#### 10.24
+- [x] @PropertiesSource & @ImportResource
+    ````
+    @PropertiesSource 加载指定的配置文件
+    @ImportResource 导入Spring的配置文件，让配置文件里的内容生效
+    ````
+- [x] Spring Boot 推荐给容器中添加组件的方式：推荐使用全注解的方式
+    > 配置类中用@Bean 给容器添加组件
+- [x] 配置文件占位符
+- [x] Profile文件
+    ````
+    Profile是Spring对不同环境提供的不同配置功能的支持，可以通过激活、指定参数等方式快速切换环境。
+    ````
+- [x] 激活指定profile
+    1. 在application.properties中指定spring.profiles.active=dev
+    2. 在application.yml中用多文档块方式
+    3. 命令行方式
+    4. 虚拟机参数
+---
+#### 10.26
+- [x] 返回json数据
 
+    ![](https://github.com/Yths0814/picture/blob/master/images/返回json数据.png)
+       
+   ````
+     Rather than relying on a view technology to perform server-side rendering of the 
+     greeting data to HTML,this RESTful web service controller simply populates and 
+     returns a Greeting object.The object data will be written directly to the HTTP 
+     response as JSON.
+    ````
+- [x] IntelliJ Idea SpringBoot 数据库增删改查实例.
 
+    ![](https://github.com/Yths0814/picture/blob/master/images/增删改查.png)
     
+    实现了查找数据表并以json格式返回数据
+    
+    1. 创建与数据表对应的实体类
+    2. 运行项目后，查看数据库，会自动创建表 ，接下来就可以进行表的增删改查了
+    3. 创建控制器
+    4. 创建一个接口，位于dao包下,调用该接口继承自JpaRepository的方法，来实现和数据库交互
+    
+---
+#### 10.27
+- [ ] 尝试IDEA+Maven 整合SSM框架实现简单的增删改查，还没成功。
 
-      
+    遇到的问题：创建Maven项目Unable to import maven projects
+    
+---
+#### 10.28
+- [x] 成功尝试IDEA+Maven 整合SSM框架实现简单的增删改查，实现一个前端小界面，可进行增删改查      
+     
+     ![](https://github.com/Yths0814/picture/blob/master/images/数据页.png)
+     
+     ![](https://github.com/Yths0814/picture/blob/master/images/增加数据.png)
+     
+     代码不是自己敲的，是自己一点点实现的，遇到很多很多问题，都是百度解决（忧愁）。接下来就是看看这个小集成页面的具体构成和代码。
+
+- [x] 昨天遇到的Unable to import maven projects问题后来发现是因为maven版本问题。
+- [x] 记得配置tomcat里的Deployment，添加war exploded不然会找不到 localhost 的网页。
+
+---
+#### 11.12(正式实习第三天)
+- [x] 读取文档表格并以html格式输出(https://github.com/zavier/ReadWordTable.git)
+
+- [x] 以Json格式输出数据
+    ````
+    {
+    		"内部标识符":"HDSD00.03.040",
+    		"数据元标识符（DE）":"DE08.10.052.00",
+    		"数据元名称":"医疗机构组织机构代码",
+    		"定义":"经《医疗机构执业许可证》登记的，并按照特定编码体系填写的代码",
+    		"数据元值的数据类型":"S3",
+    		"表示格式":"AN10",
+    		"数据元允许值":"WS 218-2002"
+    	},
+    	{
+    		"内部标识符":"HDSD00.03.025",
+    		"数据元标识符（DE）":"DE01.00.010.00",
+    		"数据元名称":"门（急）诊号",
+    		"定义":"按照某一特定编码规则赋予门（急）诊就诊对象的顺序号",
+    		"数据元值的数据类型":"S1",
+    		"表示格式":"AN..18",
+    		"数据元允许值":"—"
+    	}
+    	.....
+    ````
+
+- [x] 将读取的Json格式数据写入文件
+
+- [ ] 表格表头，归类为数据集、数据元、值域
+
+- [x] 部署项目
+
+    ![](https://github.com/Yths0814/picture/blob/master/images/元数据平台.png)
