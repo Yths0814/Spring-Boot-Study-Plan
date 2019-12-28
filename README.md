@@ -252,7 +252,7 @@ IDEA跑项目我的步骤：
 
     ![](https://github.com/Yths0814/picture/blob/master/images/元数据平台.png)
     
-#### 12.24
+#### 
 - [x] 读取json文件的数据导入数据库。(电子病历基本数据集报批稿，数据元值域标准)
 
 - [x] 元数据平台元数据管理模块代码熟悉
